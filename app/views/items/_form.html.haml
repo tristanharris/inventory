@@ -15,5 +15,11 @@
   .field
     = f.label :location
     = f.text_field :location
+  .field
+    = f.label :store_image
+    = f.file_field :store_image
+  .field
+    = f.label :usage_image
+    = f.file_field :usage_image
   .actions
     = f.submit 'Save'

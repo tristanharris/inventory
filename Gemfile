@@ -29,6 +29,8 @@ end
 
 gem 'jquery-rails'
 gem 'haml-rails'
+gem 'dropbox-api'
+gem 'carrierwave'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

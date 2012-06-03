@@ -9,6 +9,9 @@
 %p
   %b Location:
   = @item.location
+%p
+  = image_tag @item.store_image.url if @item.store_image.url
+  = image_tag @item.usage_image.url if @item.usage_image.url
 
 = link_to 'Edit', edit_item_path(@item)
 \|
