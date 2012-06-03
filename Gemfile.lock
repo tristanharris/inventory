@@ -47,6 +47,7 @@ GEM
       yajl-ruby
     erubis (2.7.0)
     eventmachine (0.12.10)
+    exception_notifier (1.0.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
     haml (3.1.6)
@@ -132,6 +133,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   dropbox-api
+  exception_notifier
   haml-rails
   jquery-rails
   pg

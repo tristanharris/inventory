@@ -64,4 +64,12 @@ Inventory::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  config.after_initialize do
+    config.middleware.use ExceptionNotifier,
+        :email_prefix => "[Inventory] ",
+        :sender_address => %{"notifier" <notifier@example.com>},
+        :exception_recipients => ENV['notifier_email']
+  end
+
 end
