@@ -10,9 +10,11 @@
   %b Location:
   = @item.location
 %p
-  = image_tag @item.store_image.url if @item.store_image.url
-  = image_tag @item.usage_image.url if @item.usage_image.url
+  = image_tag image_item_path(@item, :type => :store, :size => :thumb) if @item.store_image.url
+  = image_tag image_item_path(@item, :type => :usage, :size => :thumb) if @item.usage_image.url
 
 = link_to 'Edit', edit_item_path(@item)
 \|
 = link_to 'Back', items_path
+\|
+= link_to 'New Item', new_item_path

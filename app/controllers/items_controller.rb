@@ -80,4 +80,13 @@ class ItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def image
+    @item = Item.find(params[:id])
+    type = params[:type] + '_image'
+    size = params[:size]
+
+    render :text => @item.send(type).send(size).read
+  end
+
 end
