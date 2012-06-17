@@ -4,6 +4,7 @@ CarrierWave.configure do |config|
   config.dropbox_access_key = ENV['dropbox_access_key']
   config.dropbox_secret_key = ENV['dropbox_secret_key']
   config.storage = :dropbox
+  config.cache_dir = "#{Rails.root}/tmp/uploads"
 end
 
 #Get these from https://www.dropbox.com/developers/apps
