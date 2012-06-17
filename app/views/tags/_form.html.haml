@@ -12,5 +12,8 @@
   .field
     = f.label :description
     = f.text_field :description
+  .field
+    = f.label :item_ids, 'Items'
+    = f.select :item_ids, Item.all.map{ |t| [t.name, t.id] }, {}, multiple: true
   .actions
     = f.submit 'Save'
