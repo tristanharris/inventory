@@ -86,7 +86,10 @@ class ItemsController < ApplicationController
     type = params[:type] + '_image'
     size = params[:size]
 
-    render :text => @item.send(type).send(size).read
+    img = @item.send(type)
+    img = img.send(size) if %w(thumb).include? size
+
+    render :text => img.read, :content_type => img.file.content_type
   end
 
 end

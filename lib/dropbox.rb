@@ -58,6 +58,10 @@ module CarrierWave
           connection.upload(path, ::File.open(file.file){|f| f.read})
         end
 
+        def content_type
+          file.mime_type
+        end
+
       private
 
         def connection
