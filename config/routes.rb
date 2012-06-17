@@ -1,10 +1,6 @@
 Inventory::Application.routes.draw do
   root :to => 'items#index'
-  resources :items do
-    member do
-      get :image
-    end
-  end
+  resources :items
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

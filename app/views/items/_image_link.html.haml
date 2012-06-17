@@ -1,2 +1,2 @@
-%a{href: image_item_path(item, :type => type)}
-  = image_tag image_item_path(item, :type => type, :size => :thumb)
+%a{href: item.send(type.to_s + '_image').url}
+  = image_tag item.send(type.to_s + '_image').thumb.url
