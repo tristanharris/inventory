@@ -1,13 +1,11 @@
-require "setup_dropbox"
+require "setup_ftp"
 CarrierWave.configure do |config|
-  #Get these from rake dropbox:authorize
-  config.dropbox_access_key = ENV['dropbox_access_key']
-  config.dropbox_secret_key = ENV['dropbox_secret_key']
-  config.storage = :dropbox
+  config.ftp_host = ENV['ftp_host']
+  config.ftp_web_host = ENV['ftp_web_host']
+  config.ftp_user = ENV['ftp_user']
+  config.ftp_password = ENV['ftp_password']
+  config.ftp_base_dir = '/inventory'
+  config.storage = :ftp
   config.cache_dir = "#{Rails.root}/tmp/uploads"
 end
 
-#Get these from https://www.dropbox.com/developers/apps
-Dropbox::API::Config.app_key    = ENV['dropbox_app_key']
-Dropbox::API::Config.app_secret = ENV['dropbox_app_secret']
-Dropbox::API::Config.mode       = 'sandbox'
