@@ -16,6 +16,9 @@
     = f.label :location
     = f.text_field :location
   .field
+    = f.label :tag_ids, 'Tags'
+    = f.select :tag_ids, Tag.all.map{ |t| [t.name, t.id] }, {}, multiple: true, selected: @item.tags.map(&:id)
+  .field
     = f.label :store_image
     = f.file_field :store_image
     - if @item.store_image?

@@ -1,4 +1,6 @@
 Inventory::Application.routes.draw do
+  resources :tags
+
   root :to => 'items#index'
   resources :items
 

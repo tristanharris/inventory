@@ -10,6 +10,9 @@
   %b Location:
   = @item.location
 %p
+  %b Tags
+  = @item.tags.map(&:name).join(', ')
+%p
   = image_link @item, :store
   = image_link @item, :usage
 
