@@ -5,17 +5,17 @@
     %th Name
     %th Description
     %th
-    %th
-    %th
+
+  %tr
+    %td= link_to 'All items', items_path
+    %td
+    %td
 
   - @tags.each do |tag|
     %tr
-      %td= tag.name
+      %td= link_to tag.name, tag_items_path(tag)
       %td= tag.description
-      %td= link_to 'Show', tag
       %td= link_to 'Edit', edit_tag_path(tag)
-      %td= link_to 'Destroy', tag, :confirm => 'Are you sure?', :method => :delete
 
-%br
-
-= link_to 'New Tag', new_tag_path
+.links
+  = link_to 'New Tag', new_tag_path
