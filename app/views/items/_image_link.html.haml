@@ -1,2 +1,2 @@
 %a{href: item.send(type.to_s + '_image').url}
-  = image_tag item.send(type.to_s + '_image').thumb.url
+  = image_tag item.send(type.to_s + '_image').thumb.url, alt: type, title: type.capitalize

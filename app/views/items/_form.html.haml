@@ -19,17 +19,15 @@
     = f.label :store_image
     = f.file_field :store_image
     - if @item.store_image?
-      = image_tag @item.store_image.thumb.url
-      %label
-        = f.check_box :remove_store_image
-        Remove
+      = image_link @item, :store
+      = f.check_box :remove_store_image
+      = f.label :remove_store_image, 'Remove'
   .field
     = f.label :usage_image
     = f.file_field :usage_image
     - if @item.usage_image?
-      = image_tag @item.usage_image.thumb.url
-      %label
-        = f.check_box :remove_usage_image
-        Remove
+      = image_link @item, :usage
+      = f.check_box :remove_usage_image
+      = f.label :remove_usage_image, 'Remove'
   .actions
     = f.submit 'Save'

@@ -13,8 +13,10 @@
   = image_link @item, :store
   = image_link @item, :usage
 
-= link_to 'Edit', edit_item_path(@item)
-\|
-= link_to 'Back', items_path
-\|
-= link_to 'New Item', new_item_path
+.links
+  = link_to 'Edit', edit_item_path(@item)
+  \|
+  = link_to 'List', items_path
+
+.links
+  = link_to 'New Item', new_item_path
