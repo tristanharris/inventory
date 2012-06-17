@@ -29,7 +29,6 @@ end
 
 gem 'jquery-rails'
 gem 'haml-rails'
-gem 'dropbox-api'
 gem 'carrierwave'
 gem 'exception_notifier'
 gem 'mini_magick'
