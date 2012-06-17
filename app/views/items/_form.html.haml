@@ -13,6 +13,9 @@
     = f.label :description
     = f.text_area :description
   .field
+    = f.label :room_id
+    = f.select :room_id, Room.all.map{ |r| [r.name, r.id] }, :prompt => '- Select one -'
+  .field
     = f.label :location
     = f.text_field :location
   .field

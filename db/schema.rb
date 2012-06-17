@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120617192228) do
+ActiveRecord::Schema.define(:version => 20120617210923) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -37,11 +37,19 @@ ActiveRecord::Schema.define(:version => 20120617192228) do
     t.timestamp "updated_at",  :null => false
     t.string    "store_image"
     t.string    "usage_image"
+    t.integer   "room_id"
   end
 
   create_table "items_tags", :force => true do |t|
     t.integer  "item_id"
     t.integer  "tag_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "rooms", :force => true do |t|
+    t.string   "name"
+    t.text     "plan"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

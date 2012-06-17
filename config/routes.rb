@@ -4,7 +4,9 @@ Inventory::Application.routes.draw do
   end
 
   root :to => 'tags#index'
-  resources :items
+  resources :items do
+    get 'location', :as => 'location', :to => 'locations#show'
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
