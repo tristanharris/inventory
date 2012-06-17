@@ -138,6 +138,7 @@ module CarrierWave
       def self.connection(host, uploader)
         return @connection unless @connection.nil?
         @connection = Net::FTP.new(host, uploader.ftp_user, uploader.ftp_password)
+        @connection.passive = true
         ObjectSpace.define_finalizer(@connection, lambda {|id| ObjectSpace._id2ref(id).close})
         @connection
       end
