@@ -1,4 +1,4 @@
-$('[owner=district] [location]').live('click', function(e) {
+$('#location_edit [owner=district] [location]').live('click', function(e) {
   e.preventDefault()
   $('#location').attr('value', $(this).attr('location'));
 
@@ -10,6 +10,6 @@ $('[owner=district] [location]').live('click', function(e) {
   $('#shelf').val(selected);
 });
 
-$('.edit_item input[type=submit]').live('click', function(e) {
+$('#location_edit .edit_item input[type=submit]').live('click', function(e) {
   $('#item_location').attr('value', $('#location').attr('value') + ':' + $('#shelf').val());
 });

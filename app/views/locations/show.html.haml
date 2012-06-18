@@ -1,12 +1,13 @@
 %h1= @room.name
 
-= raw @room.plan
+#location_edit
+  = raw @room.plan
 
-= form_for @item do |f|
-  = f.text_field :location
-  = text_field_tag :location
-  = select_tag :shelf, options_for_select([1])
+  = form_for @item do |f|
+    = f.text_field :location
+    = text_field_tag :location
+    = select_tag :shelf, options_for_select([1])
 
-  .actions
-    = f.submit 'Save'
+    .actions
+      = f.submit 'Save'
 
