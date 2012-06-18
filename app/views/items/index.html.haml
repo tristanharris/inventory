@@ -5,16 +5,15 @@
     %th Name
     %th Description
     %th Location
-    %th
-    %th
+    %th Tags
     %th
 
   - @items.each do |item|
     %tr
-      %td= item.name
+      %td= link_to item.name, item
       %td= item.description
-      %td= item.location
-      %td= link_to 'Show', item
+      %td= item.full_location
+      %td= raw item.tags.map{|t| link_to t.name, t}.join(', ')
       %td= link_to 'Edit', edit_item_path(item)
 
 %br

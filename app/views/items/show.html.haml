@@ -6,7 +6,7 @@
   = @item.description
 %p
   %b Location:
-  = link_to [@item.room.try(:name), @item.location].join(': '), item_location_path(@item)
+  = link_to @item.full_location, item_location_path(@item)
 %p
   %b Tags
   = @item.tags.map(&:name).join(', ')

@@ -1,6 +1,6 @@
 Inventory::Application.routes.draw do
-  resources :tags do
-    resources :items
+  resources :tags, :only => [:new, :create, :edit, :update] do
+    get '', :as => '', :to => 'items#index'
   end
 
   root :to => 'tags#index'
