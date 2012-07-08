@@ -1,9 +1,7 @@
 Inventory::Application.routes.draw do
-  resources :tags, :only => [:new, :create, :edit, :update] do
-    get '', :as => '', :to => 'items#index'
-  end
-
   root :to => 'tags#index'
+  resources :tags
+
   resources :items do
     get 'location', :as => 'location', :to => 'locations#show'
   end

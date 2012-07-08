@@ -13,31 +13,15 @@
 
 ActiveRecord::Schema.define(:version => 20120617210923) do
 
-  create_table "delayed_jobs", :force => true do |t|
-    t.integer  "priority",   :default => 0
-    t.integer  "attempts",   :default => 0
-    t.text     "handler"
-    t.text     "last_error"
-    t.datetime "run_at"
-    t.datetime "locked_at"
-    t.datetime "failed_at"
-    t.string   "locked_by"
-    t.string   "queue"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-  end
-
-  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
-
   create_table "items", :force => true do |t|
-    t.string    "name"
-    t.text      "description"
-    t.string    "location"
-    t.timestamp "created_at",  :null => false
-    t.timestamp "updated_at",  :null => false
-    t.string    "store_image"
-    t.string    "usage_image"
-    t.integer   "room_id"
+    t.string   "name"
+    t.text     "description"
+    t.string   "location"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "store_image"
+    t.string   "usage_image"
+    t.integer  "room_id"
   end
 
   create_table "items_tags", :force => true do |t|
