@@ -10,8 +10,11 @@
 
     %p#notice= notice
 
+    %h1= yield :title
+
+    #content
+      = yield
+
     .links
       = link_to 'Home', root_url
-
-    = yield
-
+      = yield :links

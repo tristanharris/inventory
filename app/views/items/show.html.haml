@@ -1,6 +1,6 @@
-%p
-  %b Name:
+- content_for :title do
   = @item.name
+
 %p
   %b Description:
   = @item.description
@@ -14,10 +14,7 @@
   = image_link @item, :store
   = image_link @item, :usage
 
-.links
+- content_for :links do
   = link_to 'Edit', edit_item_path(@item)
-  \|
   = link_to 'List', items_path
-
-.links
   = link_to 'New Item', new_item_path

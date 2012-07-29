@@ -1,11 +1,11 @@
-%h1 Editing tag
+- content_for :title do
+  Editing tag
 
 = render 'form'
-
-.links
-  = link_to 'Show', @tag
-  \|
-  = link_to 'Back', tags_path
-
 .links
   = link_to 'Destroy', @tag, :confirm => 'Are you sure?', :method => :delete
+
+- content_for :links do
+  = link_to 'Show', @tag
+  = link_to 'Back', tags_path
+

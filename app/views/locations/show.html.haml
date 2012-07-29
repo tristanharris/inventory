@@ -1,4 +1,5 @@
-%h1= @room.name
+- content_for :title do
+  = @room.name
 
 #location_edit
   = raw @room.plan
