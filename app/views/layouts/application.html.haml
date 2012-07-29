@@ -8,11 +8,13 @@
 
   %body
 
-    %p#notice= notice
-
     %h1= yield :title
 
     #content
+      #flash
+        - flash.each do |type, text|
+          %p{:class => type}= text
+
       = yield
 
     .links
