@@ -8,6 +8,8 @@ class Item < ActiveRecord::Base
   has_many :tags, :through => :items_tags
   belongs_to :room
 
+  default_scope order(:name)
+
   def full_location
     [room.try(:name), location].join(': ')
   end
