@@ -34,6 +34,7 @@ gem 'carrierwave'
 gem 'exception_notifier'
 gem 'mini_magick'
 gem 'cancan'
+gem 'devise'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

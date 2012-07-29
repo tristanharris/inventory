@@ -11,38 +11,50 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120617210923) do
+ActiveRecord::Schema.define(:version => 20120729123421) do
 
   create_table "items", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "location"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.string   "store_image"
-    t.string   "usage_image"
-    t.integer  "room_id"
+    t.string    "name"
+    t.text      "description"
+    t.string    "location"
+    t.timestamp "created_at",  :null => false
+    t.timestamp "updated_at",  :null => false
+    t.string    "store_image"
+    t.string    "usage_image"
+    t.integer   "room_id"
   end
 
   create_table "items_tags", :force => true do |t|
-    t.integer  "item_id"
-    t.integer  "tag_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer   "item_id"
+    t.integer   "tag_id"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "rooms", :force => true do |t|
-    t.string   "name"
-    t.text     "plan"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "name"
+    t.text      "plan"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "tags", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string    "name"
+    t.string    "description"
+    t.timestamp "created_at",  :null => false
+    t.timestamp "updated_at",  :null => false
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
