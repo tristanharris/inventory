@@ -1,8 +1,7 @@
 class LocationsController < ApplicationController
+  load_and_authorize_resource :item
 
   def show
-    @item = Item.find(params[:item_id])
-    authorize! :read, @item
     @room = @item.room
   end
 
