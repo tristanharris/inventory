@@ -15,6 +15,6 @@
   = image_link @item, :usage
 
 - content_for :links do
-  = link_to 'Edit', edit_item_path(@item)
+  = link_to 'Edit', edit_item_path(@item) if can? :update, @item
   = link_to 'List', items_path
-  = link_to 'New Item', new_item_path
+  = link_to 'New Item', new_item_path if can? :create, Item

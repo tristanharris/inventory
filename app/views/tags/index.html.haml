@@ -16,7 +16,7 @@
     %tr
       %td= link_to tag.name, tag
       %td= tag.description
-      %td= link_to 'Edit', edit_tag_path(tag)
+      %td= link_to 'Edit', edit_tag_path(tag) if can? :update, tag
 
 - content_for :links do
-  = link_to 'New Tag', new_tag_path
+  = link_to 'New Tag', new_tag_path if can? :create, Tag

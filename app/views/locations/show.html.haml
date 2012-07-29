@@ -10,5 +10,5 @@
     = select_tag :shelf, options_for_select([1])
 
     .actions
-      = f.submit 'Save'
+      = f.submit 'Save' if can? :update, @item
 
