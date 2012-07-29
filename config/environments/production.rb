@@ -72,4 +72,6 @@ Inventory::Application.configure do
         :exception_recipients => ENV['notifier_email']
   end
 
+  # Required for Heroku see http://guides.rubyonrails.org/asset_pipeline.html
+  config.assets.initialize_on_precompile = false
 end
