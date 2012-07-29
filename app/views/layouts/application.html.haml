@@ -21,5 +21,6 @@
       = link_to 'Home', root_url
       = yield :links
       = link_to 'Login', '/users/sign_in' if !user_signed_in? && !devise_controller?
+      = link_to current_user.name, '/users/edit' if user_signed_in?
       = link_to 'Logout', '/users/sign_out', :method => :delete if user_signed_in?
     
