@@ -1,8 +1,9 @@
 - content_for :title do
-  = @room.name
+  = @item.name
+  location
 
-#location_edit
-  = raw @room.plan
+#location_page{:class => can?(:update, @item) ? 'editable' : ''}
+  %strong= @room.name
 
   = form_for @item do |f|
     = f.text_field :location
@@ -10,5 +11,6 @@
     = select_tag :shelf, options_for_select([1])
 
     .actions
-      = f.submit 'Save' if can? :update, @item
+      = f.submit 'Save'
 
+  = raw @room.plan

@@ -1,14 +1,20 @@
-svg
+#location_page
+  #location
+    width: 3em
+  #item_location
+    display: none
+  form
+    display: inline
+  .actions
+    display: none
   [owner=district] [location]
     fill: white !important
-    &:hover
-      fill: red !important
 
   [location][selected]
     fill: blue !important
-
-#location_edit
-  #item_location
-    display: none
-  #location
-    width: 3em
+  &.editable
+    [owner=district] [location]
+      &:hover
+        fill: #ccc !important
+    .actions
+      display: block

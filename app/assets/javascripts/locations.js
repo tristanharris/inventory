@@ -1,9 +1,9 @@
-$('#location_edit [owner=district] [location]').live('click', function(e) {
+$('#location_page.editable [owner=district] [location]').live('click', function(e) {
   e.preventDefault()
   select_location($(this));
 });
 
-$('#location_edit .edit_item input[type=submit]').live('click', function(e) {
+$('#location_page.editable .edit_item input[type=submit]').live('click', function(e) {
   $('#item_location').attr('value', $('#location').attr('value') + ':' + $('#shelf').val());
 });
 
