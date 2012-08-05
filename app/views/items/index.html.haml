@@ -6,5 +6,7 @@
 
 - content_for :links do
   = link_to 'New Item', new_item_path if can? :create, Item
+
+-content_for :title_links do
   = link_to 'Show as grid', url_for(:style => :grid) if !image_index?
   = link_to 'Show as list', url_for(:style => :list) if image_index?

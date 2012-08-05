@@ -26,7 +26,7 @@ a
     text-decoration: underline
 
 
-body > .links
+body > .links, #title_links
   margin: 10px 50px
   padding: 5px 10px
   background: #f5f5f5
@@ -40,3 +40,17 @@ body > .links
       right: 0px
     &:last-child:after
       content: ''
+
+#title
+  position: relative
+
+#title_links
+  position: absolute
+  bottom: 0
+  display: inline
+  margin: 0 0 0 -50px
+  padding: 1px 0 0 4px
+  border-top: solid 1px #ccc
+  border-right: solid 1px #ccc
+  border-top-right-radius: 5px
+

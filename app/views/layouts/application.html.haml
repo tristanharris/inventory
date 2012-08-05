@@ -8,7 +8,10 @@
 
   %body
 
-    %h1= yield :title
+    #title
+      %h1= yield :title
+      - if !yield(:title_links).empty?
+        #title_links= yield :title_links
 
     #content
       #flash
