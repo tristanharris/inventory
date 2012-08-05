@@ -10,7 +10,7 @@
 
     #title
       %h1= yield :title
-      - if !yield(:title_links).empty?
+      - if !yield(:title_links).strip.empty?
         #title_links= yield :title_links
 
     #content
@@ -26,4 +26,4 @@
       = link_to 'Login', '/users/sign_in' if !user_signed_in? && !devise_controller?
       = link_to current_user.name, '/users/edit' if user_signed_in?
       = link_to 'Logout', '/users/sign_out', :method => :delete if user_signed_in?
-    
+

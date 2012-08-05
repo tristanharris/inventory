@@ -9,12 +9,14 @@
   = link_to @item.full_location, item_location_path(@item)
 %p
   %b Tags
-  = @item.tags.map(&:name).join(', ')
+  = link_to('All', Item) + ','
+  = raw @item.tags.map{|tag| link_to tag.name, tag}.join(', ')
 %p
   = image_link @item, :store
   = image_link @item, :usage
 
-- content_for :links do
+- content_for :title_links do
   = link_to 'Edit', edit_item_path(@item) if can? :update, @item
-  = link_to 'List', items_path
+
+- content_for :links do
   = link_to 'New Item', new_item_path if can? :create, Item
