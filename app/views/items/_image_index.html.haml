@@ -1,0 +1,4 @@
+.grid
+  - @items.each do |item|
+    = link_to item, :class => 'item', :title => item.name do
+      = image_for(item, :alt => item.name) || item.name
