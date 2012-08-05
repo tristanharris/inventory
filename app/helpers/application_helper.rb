@@ -11,7 +11,7 @@ module ApplicationHelper
   end
 
   def image_index?
-    true
+    session[:style] == 'grid'
   end
 
 end

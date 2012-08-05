@@ -6,4 +6,14 @@ class ApplicationController < ActionController::Base
     redirect_to new_user_session_url, :alert => exception.message
   end
 
+  before_filter :check_style
+
+  private
+  def check_style
+    if params[:style]
+      session[:style] = params[:style]
+      redirect_to url_for(:style => nil)
+    end
+  end
+
 end
