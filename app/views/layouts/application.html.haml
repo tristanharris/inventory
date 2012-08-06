@@ -9,7 +9,7 @@
   %body
 
     #title
-      %h1= yield :title
+      %h1>= yield :title
       - if !yield(:title_links).strip.empty?
         #title_links= yield :title_links
 
