@@ -7,7 +7,12 @@ gem 'rails', '3.2.11'
 
 group :development, :test do
   gem 'sqlite3'
+end
+
+group :development do
   gem 'thin'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :production do
