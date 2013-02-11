@@ -2,6 +2,19 @@
   =@tag ? @tag.name : 'All'
   items
 
+= search_form_for @q, :class => 'search' do |f|
+  %fieldset
+    %legend
+      Search
+    = f.text_field :name_or_description_cont, :size => 20
+    - if !@tag
+      = f.label 'Tag:'
+      = f.collection_select :tags_id_eq, Tag.all, :id, :name, :include_blank => true
+    = f.label 'Location:'
+    = f.collection_select :room_id_eq, Room.all, :id, :name, :include_blank => true
+    = f.text_field :location_cont, :size => 4
+    = f.submit
+
 = render image_index? ? 'items/image_index' : 'items/text_index'
 
 - content_for :links do

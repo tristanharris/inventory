@@ -4,7 +4,8 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = params[:tag_id] ? Tag.find(params[:tag_id]).items : Item.all
+    @q = Item.search(params[:q])
+    @items = @q.result(:distinct => true)
 
     respond_to do |format|
       format.html # index.html.erb

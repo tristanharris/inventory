@@ -15,7 +15,8 @@ class TagsController < ApplicationController
   # GET /tags/1
   # GET /tags/1.json
   def show
-    @items = @tag.items
+    @q = @tag.items.search(params[:q])
+    @items = @q.result(:distinct => true)
 
     render 'items/index'
   end
