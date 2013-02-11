@@ -40,6 +40,7 @@ gem 'exception_notifier'
 gem 'mini_magick'
 gem 'cancan'
 gem 'devise'
+gem 'omniauth-openid'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
