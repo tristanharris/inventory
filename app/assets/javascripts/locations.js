@@ -1,13 +1,13 @@
-$('#location_page.editable [owner=district] [location]').live('click', function(e) {
-  e.preventDefault()
-  select_location($(this));
-});
-
-$('#location_page.editable .edit_item input[type=submit]').live('click', function(e) {
-  $('#item_location').attr('value', $('#location').attr('value') + ':' + $('#shelf').val());
-});
-
 $(function() {
+  $('#location_page.editable').on('click', '[owner=district] [location]', function(e) {
+    e.preventDefault()
+    select_location($(this));
+  });
+
+  $('#location_page.editable').on('click', '.edit_item input[type=submit]', function(e) {
+    $('#item_location').attr('value', $('#location').attr('value') + ':' + $('#shelf').val());
+  });
+
   var parts = $('#item_location').attr('value').split(':');
   select_location($('[location='+parts[0]+']'));
   $('#shelf').attr('value', parts[1]);
