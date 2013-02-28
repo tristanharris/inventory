@@ -12,8 +12,14 @@ class User < ActiveRecord::Base
   validates :name, :presence => true
 
   has_many :access, :class_name => Access
+  has_many :bookings
 
   def qm?
     !access.role(:qm).empty?
   end
+
+  def booking
+    bookings.last || Booking.new
+  end
+
 end

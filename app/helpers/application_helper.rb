@@ -14,4 +14,7 @@ module ApplicationHelper
     session[:style] == 'grid'
   end
 
+  def booking_checkbox(form, item)
+    form.check_box :item_ids, {:id => nil, :name => "#{form.object_name}[item_flags][#{item.id}]", :checked => form.object.items.include?(item)}
+  end
 end

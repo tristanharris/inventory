@@ -18,6 +18,7 @@ class TagsController < ApplicationController
     @q = @tag.items.search(params[:q])
     @items = @q.result(:distinct => true)
 
+    @booking = current_user.booking
     render 'items/index'
   end
 

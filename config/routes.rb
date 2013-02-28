@@ -3,6 +3,7 @@ Inventory::Application.routes.draw do
 
   root :to => 'tags#index'
   resources :tags
+  resources :bookings
 
   resources :items do
     get 'location', :as => 'location', :to => 'locations#show'

@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   def index
     @q = Item.search(params[:q])
     @items = @q.result(:distinct => true)
+    @booking = current_user.booking
 
     respond_to do |format|
       format.html # index.html.erb

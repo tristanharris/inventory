@@ -11,11 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120729145947) do
+ActiveRecord::Schema.define(:version => 20130227222327) do
 
   create_table "accesses", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "role"
+    t.integer   "user_id"
+    t.string    "role"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
+  end
+
+  create_table "bookings", :force => true do |t|
+    t.string   "description"
+    t.date     "from"
+    t.date     "to"
+    t.datetime "collect_at"
+    t.datetime "return_at"
+    t.integer  "user_id",     :null => false
+    t.text     "comments"
+    t.integer  "status_id",   :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "item_bookings", :force => true do |t|
+    t.integer  "item_id"
+    t.integer  "booking_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -53,13 +73,15 @@ ActiveRecord::Schema.define(:version => 20120729145947) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-    t.string   "name"
+    t.string    "email",                  :default => "", :null => false
+    t.string    "encrypted_password",     :default => "", :null => false
+    t.string    "reset_password_token"
+    t.timestamp "reset_password_sent_at"
+    t.timestamp "created_at",                             :null => false
+    t.timestamp "updated_at",                             :null => false
+    t.string    "name"
+    t.string    "provider"
+    t.string    "uid"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

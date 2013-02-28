@@ -5,6 +5,7 @@ class Ability
     user ||= User.new
     can :read, [Item, Tag]
     can :manage, [Item, Tag] if user.qm?
+    can :manage, [Booking] unless user.new_record?
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

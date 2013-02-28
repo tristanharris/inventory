@@ -15,7 +15,15 @@
     = f.text_field :location_cont, :size => 4
     = f.submit
 
-= render image_index? ? 'items/image_index' : 'items/text_index'
+= form_for @booking do |f|
+  = hidden_field_tag 'return_url', url_for()
+  = render image_index? ? 'items/image_index' : 'items/text_index', :booking_form => f
+
+  = f.submit 'Add to booking'
+  %p
+    You have
+    = @booking.items.count
+    items selected
 
 - content_for :links do
   = link_to 'New Item', new_item_path if can? :create, Item
