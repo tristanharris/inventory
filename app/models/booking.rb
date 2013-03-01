@@ -6,6 +6,11 @@ class Booking < ActiveRecord::Base
   has_many :item_bookings
   has_many :items, :through => :item_bookings
 
+  validates :status_id, :user_id, :presence => true
+  validates :items, :presence => {:message => 'are required'}
+
+  validates :from, :to, :description, :presence => true, :if => lambda{|b| b.status_id > 1}
+
   scope :pending, where(:status_id => 1)
 
   def item_flags=(flags)
