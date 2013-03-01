@@ -22,4 +22,8 @@ class User < ActiveRecord::Base
     bookings.last || Booking.new
   end
 
+  def to_s
+    name
+  end
+
 end
