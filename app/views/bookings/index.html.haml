@@ -1,0 +1,15 @@
+- content_for :title do
+  Bookings
+
+%table
+  %tr
+    %th Dates
+    %th Desctiption
+    %th Requestor
+    %th Items
+  - @bookings.each do |booking|
+    %tr
+      %td= link_to booking.from..booking.to, booking
+      %td= booking.description
+      %td= booking.user
+      %td= booking.items.count
