@@ -3,6 +3,14 @@
 
 = form_for @booking do |f|
 
+  - if @booking.errors.any?
+    #errorExplanation
+      = pluralize(@booking.errors.count, "error")
+      prohibited this booking from being made:
+    %ul
+      - @booking.errors.full_messages.each do |msg|
+        %li= msg
+
   %label
     Purpose:
     = f.text_field :description
