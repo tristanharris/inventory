@@ -20,6 +20,7 @@
   = render image_index? ? 'items/image_index' : 'items/text_index', :items => @items, :booking_form => f
 
   = f.submit 'Add to booking'
+  = link_to 'View booking', @booking
   %p
     You have
     = @booking.items.count

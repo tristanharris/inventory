@@ -1,5 +1,5 @@
 class Booking < ActiveRecord::Base
-  attr_accessible :description, :status_id, :item_flags
+  attr_accessible :description, :status_id, :item_flags, :from, :to
 
   belongs_to :user
   belongs_to :status
