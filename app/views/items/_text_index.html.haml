@@ -9,7 +9,7 @@
 
   - items.each do |item|
     %tr
-      %td= booking_checkbox(booking_form, item)
+      %td= booking_checkbox(booking_form, item) if defined? booking_form
       %td= link_to item.name, item
       %td= item.description
       %td= link_to item.full_location, item_location_path(item)

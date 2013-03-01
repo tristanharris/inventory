@@ -11,6 +11,14 @@ class BookingsController < ApplicationController
     end
   end
 
+  def show
+    if can? :update, @booking
+      render :edit
+    else
+      render :show
+    end
+  end
+
   def update
     if @booking.update_attributes(params[:booking])
       redirect_to params[:return_url] || @booking, notice: 'Booking was successfully updated.'

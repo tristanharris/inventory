@@ -1,0 +1,21 @@
+- content_for :title do
+  Booking
+
+= form_for @booking do |f|
+
+  %label
+    Purpose:
+    = f.text_field :description
+  %fieldset
+    %legend
+      Required
+    %label
+      From:
+      = f.date_select :from, :prompt => true, :start_year => Time.now.year
+    %label
+      To:
+      = f.date_select :to, :prompt => true, :start_year => Time.now.year
+
+  = render 'items/text_index', :items => @booking.items, :booking_form => f
+
+  = f.submit 'Submit booking'
