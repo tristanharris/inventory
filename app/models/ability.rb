@@ -4,8 +4,9 @@ class Ability
   def initialize(user)
     user ||= User.new
     can :read, [Item, Tag]
-    can :manage, [Item, Tag] if user.qm?
-    can :manage, [Booking] unless user.new_record?
+    can :manage, [Item, Tag, Booking] if user.qm?
+    can [:read, :create], Booking unless user.new_record?
+    can :update, Booking, :user_id => user.id
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
