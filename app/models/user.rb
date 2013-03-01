@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   end
 
   def booking
-    bookings.last || Booking.new
+    bookings.pending.last || Booking.new
   end
 
   def to_s

@@ -11,6 +11,7 @@
       - @booking.errors.full_messages.each do |msg|
         %li= msg
 
+  = f.hidden_field :status_id, :value => 2
   %label
     Purpose:
     = f.text_field :description

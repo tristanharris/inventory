@@ -6,6 +6,8 @@ class Booking < ActiveRecord::Base
   has_many :item_bookings
   has_many :items, :through => :item_bookings
 
+  scope :pending, where(:status_id => 1)
+
   def item_flags=(flags)
     part = flags.partition{|k,v| v.to_i == 0}
     self.item_ids -= part.first.map{|p| p.first.to_i}
