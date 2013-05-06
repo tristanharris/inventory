@@ -11,4 +11,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_url
     end
   end
+
+  def local
+    raise 'Development only' unless Rails.env == 'development'
+    rdsc
+  end
+
 end
