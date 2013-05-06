@@ -231,5 +231,5 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = "/my_engine/users/auth"
 
   require 'openid/store/filesystem'
-  config.omniauth :open_id, :store => OpenID::Store::Filesystem.new('./tmp'), :require => 'omniauth-openid', :name => 'rdsc', :identifier => 'http://wp.localhost'
+  config.omniauth :open_id, :store => OpenID::Store::Filesystem.new('./tmp'), :require => 'omniauth-openid', :name => 'rdsc', :identifier => 'http://romseyscouts.org'
 end
