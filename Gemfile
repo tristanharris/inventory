@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -40,6 +40,7 @@ gem 'exception_notifier'
 gem 'mini_magick'
 gem 'cancan'
 gem 'devise'
+gem 'ransack'
 gem 'omniauth-openid'
 
 # To use ActiveModel has_secure_password
@@ -56,3 +57,9 @@ gem 'omniauth-openid'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+# fix vulnerabilities (from gemcanary)
+gem 'activerecord', '>= 3.2.12'
+gem 'json', '>= 1.7.7'
+gem 'rack', '~> 1.4.5'
+gem 'rdoc', '~> 3.12.1'

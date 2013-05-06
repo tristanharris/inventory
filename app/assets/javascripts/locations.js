@@ -8,6 +8,14 @@ $(function() {
     $('#item_location').attr('value', $('#location').attr('value') + ':' + $('#shelf').val());
   });
 
+  $('[location]').each(function(a, el) {
+    var t = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    var b = el.getBBox();
+    t.setAttribute("transform", "translate(" + (b.x + 5) + " " + (b.y + 20) + ")");
+    t.textContent = $(el).attr('location');
+    $(el).after(t);
+  });
+
   var parts = $('#item_location').attr('value').split(':');
   select_location($('[location='+parts[0]+']'));
   $('#shelf').attr('value', parts[1]);
