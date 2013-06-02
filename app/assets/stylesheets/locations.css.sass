@@ -7,16 +7,16 @@
     display: inline
   .actions
     display: none
-  [owner=district] [location]
-    fill: white !important
+  [location]
+    pointer-events: all
 
   [location][selected]
     fill: blue !important
     & + text
       fill: white
   &.editable
-    [owner=district] [location]
+    [location]
       &:hover
-        fill: #ccc !important
+        fill: lighten(blue, 20%) !important
     .actions
       display: block

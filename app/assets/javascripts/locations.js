@@ -1,5 +1,5 @@
 $(function() {
-  $('#location_page.editable').on('click', '[owner=district] [location]', function(e) {
+  $('#location_page.editable').on('click', '[location]', function(e) {
     e.preventDefault()
     select_location($(this));
   });
