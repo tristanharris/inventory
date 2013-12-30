@@ -230,6 +230,8 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = "/my_engine/users/auth"
 
+  config.secret_key = ENV['devise_secret'] || raise('No ENV["devise_secret"] set')
+
   require 'openid/store/filesystem'
   config.omniauth :open_id, :store => OpenID::Store::Filesystem.new('./tmp'), :require => 'omniauth-openid', :name => 'rdsc', :identifier => 'http://romseyscouts.org'
   config.omniauth :open_id, :store => OpenID::Store::Filesystem.new('./tmp'), :require => 'omniauth-openid', :name => 'local', :identifier => 'http://wp.localhost' if Rails.env == 'development'
