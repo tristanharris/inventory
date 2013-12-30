@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.16'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -63,3 +63,5 @@ gem 'activerecord', '>= 3.2.12'
 gem 'json', '>= 1.7.7'
 gem 'rack', '~> 1.4.5'
 gem 'rdoc', '~> 3.12.1'
+gem 'i18n', '>= 0.6.6'
+gem 'actionpack', '~> 3.2.16'
